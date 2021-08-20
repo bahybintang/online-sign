@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Sign</title>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.2.1/exceljs.min.js"
+      integrity="sha512-DPjFYmSXYGB7/5k/Z4h5iw1i29Vl//jj3I7v79DRy+T0o4KssDku6Hf7ImlIV87KmNIh+euT5H0LJhQmTnbC/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container-sm">
+      <div class="row d-flex justify-content-center text-center">
+        <h2>
+          Online
+          <small class="text-muted">Sign</small>
+        </h2>
+      </div>
+      <div class="row d-flex justify-content-center text-center">
+        <div class="wrapper">
+          <canvas
+            id="signature-pad"
+            class="signature-pad border"
+            width="400"
+            height="200"
+          ></canvas>
+        </div>
+      </div>
+      <div class="row mt-3 d-flex justify-content-center text-center">
+        <div class="col">
+          <button type="button" class="btn btn-success" id="draw">Draw</button>
+          <button type="button" class="btn btn-danger" id="erase">Erase</button>
+          <button type="button" class="btn btn-primary" id="clear">
+            Clear
+          </button>
+        </div>
+      </div>
+      <div class="row mt-3 d-flex justify-content-center text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="xls" />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <select
+            class="form-select"
+            id="konsep"
+            aria-label="Pilih konsep laporan"
+          >
+            <option value="0" selected>Pilih konsep laporan</option>
+            <option value="1">
+              Selesai disusun dan diserahkan oleh Ketua Tim Kepada Pengendali
+              Teknis
+            </option>
+            <option value="2">
+              Selesai dibahas kemudian diserahkan oleh Pengendali Teknis Kepada
+              Inspektur I
+            </option>
+            <option value="3">
+              Selesai disusun dan diserahkan oleh Pengendali Teknis kepada
+              Pengendali Mutu
+            </option>
+            <option value="4">
+              Selesai dibahas dan diserahkan oleh Inspektur I Kepada Inspektur
+              Utama oleh
+            </option>
+            <option value="5">
+              Selesai dibahas dan disetujui oleh Inspektur Utama
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <button type="button" class="btn btn-warning disabled" id="sign">
+            Sign
+          </button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+
+    <script src="canvas.js"></script>
+    <script src="excel.js"></script>
+    <link rel="stylesheet" type="text/css" href="canvas.css" />
+  </body>
+</html>

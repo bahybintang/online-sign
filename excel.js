@@ -43,7 +43,7 @@ function getInsertPosition(worksheet) {
   var row = 20 + parseInt(konsep.value),
     column = "A".charCodeAt(0);
   var currRow = worksheet.getRow(row);
-  for (var i = 3; i < 11; i++) {
+  for (var i = 3; ; i++) {
     if (!currRow.getCell(i).value) {
       column += i;
       break;

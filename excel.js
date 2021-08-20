@@ -66,11 +66,25 @@ function addSign(worksheet, imageId, pos) {
     editAs: "oneCell",
   });
   worksheet.getRow(rowNum + 1).height = 50;
-  worksheet.getCell(cellNum).value = new Date();
+  var date = new Date();
+  worksheet.getCell(cellNum).value = new Date(
+    Date.UTC(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+      date.getSeconds()
+    )
+  );
 }
 
 function getImageSizeInCell(width, height, cellWidth) {
   height = height * (cellWidth / width) * 6.5;
   width = cellWidth * 6.5;
   return { width: parseInt(width), height: parseInt(height) };
+}
+
+function getDateIndonesia(date) {
+  date.setHours(date.getHours() + 7);
 }

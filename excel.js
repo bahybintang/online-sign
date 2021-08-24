@@ -21,10 +21,10 @@ konsep.addEventListener("change", function (e) {
 });
 
 signButton.addEventListener("click", async function (e) {
-  var imageData = signaturePad.toDataURL("image/jpeg");
+  var imageData = signaturePad.toDataURL("image/png");
   const imageId = workbook.addImage({
     base64: imageData,
-    extension: "jpeg",
+    extension: "png",
   });
   var worksheet = workbook.getWorksheet("Sheet1");
   var pos = getInsertPosition(worksheet);

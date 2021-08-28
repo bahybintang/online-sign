@@ -77,6 +77,7 @@ function addSign(worksheet, imageId, pos) {
       date.getSeconds()
     )
   );
+  worksheet.getCell(cellNum).numFmt = "m/d/yyyy";
 }
 
 function getImageSizeInCell(width, height, cellWidth) {
